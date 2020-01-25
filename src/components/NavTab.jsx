@@ -10,10 +10,6 @@ class NavTab extends React.Component {
         }
     }
 
-    handleClick(event) {
-        console.log("this.state.activeLink in NavTab=", this.state.activeLink);
-    }
-
     render() {
 
         let login = this.props.name;
