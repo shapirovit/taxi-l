@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Login from './pages/Login.jsx';
+import Map from './pages/Map.jsx';
+import Profile from './pages/Profile.jsx';
+import Signup from './pages/Signup.jsx';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          activeLink: "0",
+          page: "Map"
+      }
+      this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+      this.setState({ page: event.target.name }, console.log("this.state.activeLink=", this.state.activeLink))
+  }
+
+  render() {
+
+      let pages = {
+        Profile: <Profile onClick={this.handleClick}/>,
+        Map: <Map onClick={this.handleClick}/>,
+        Login: <Login onClick={this.handleClick}/>,
+        Signup: <Signup onClick={this.handleClick}/>
+      }
+
+      return (
+          <>
+              {pages[this.state.page]}
+              <button onClick={this.handleClick} name="Profile" >Profile</button>
+              <button onClick={this.handleClick} name="Map" >Map</button>
+              <button onClick={this.handleClick} name="Login" >Login</button>
+              <button onClick={this.handleClick} name="Signup" >Signup</button>
+          </>
+      )
+  }
 }
 
 export default App;
