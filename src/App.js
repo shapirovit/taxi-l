@@ -31,10 +31,10 @@ class App extends React.Component {
       return (
           <>
               {pages[this.state.page]}
-              <button onClick={this.handleClick} name="Profile" >Profile</button>
-              <button onClick={this.handleClick} name="Map" >Map</button>
-              <button onClick={this.handleClick} name="Login" >Login</button>
-              <button onClick={this.handleClick} name="Signup" >Signup</button>
+              <button onClick={this.handleClick} name="Profile" >тест state Profile</button>
+              <button onClick={this.handleClick} name="Map" >тест state Map</button>
+              <button onClick={this.handleClick} name="Login" >тест state Login</button>
+              <button onClick={this.handleClick} name="Signup" >тест state Signup</button>
           </>
       )
   }
