@@ -15,7 +15,7 @@ class Login extends React.Component {
         return (
             <>
                 <h1>Taxi-Loft</h1>
-                <NavTab activeLink="2" name="Логин" />
+                <NavTab activeLink="2" name="Логин" nameLink="Login" func={this.props.func} />
                 <h1>Логин</h1>
             </>
         )

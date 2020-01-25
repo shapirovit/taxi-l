@@ -10,14 +10,19 @@ class NavTab extends React.Component {
         }
     }
 
+    handleClick(event) {
+        console.log("this.state.activeLink in NavTab=", this.state.activeLink);
+    }
+
     render() {
 
         let login = this.props.name;
+        let change = this.props.nameLink;
 
         const menu = [
-            {link: "Профиль", id: '0'},
-            {link: "Карта", id: '1'},
-            {link: login, id: '2'}
+            {link: "Профиль", id: '0', change: "Profile"},
+            {link: "Карта", id: '1', change: "Map"},
+            {link: login, id: '2', change: change}
         ];
 
         console.log('this.props.activeLink=', this.props.activeLink);
@@ -25,7 +30,7 @@ class NavTab extends React.Component {
         return (
             <>
                 {menu.map(nav => (
-                    <NavLink key={nav.id} id={nav.id} name={nav.link} className={ this.props.activeLink === nav.id ? "navLink activeLink" : "navLink" } />
+                    <NavLink key={nav.id} change={nav.change} func={this.props.func} id={nav.id} name={nav.link} className={ this.props.activeLink === nav.id ? "navLink activeLink" : "navLink" } />
                 ))}
             </>
         )

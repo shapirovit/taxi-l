@@ -15,7 +15,7 @@ class Signup extends React.Component {
         return (
             <>
                 <h1>Taxi-Loft</h1>
-                <NavTab activeLink="2" name="Регистрация" />
+                <NavTab activeLink="2" name="Регистрация"  nameLink="Signup" func={this.props.func} />
                 <h1>Регистрация</h1>
             </>
         )

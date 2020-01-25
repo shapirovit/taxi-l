@@ -10,7 +10,7 @@ class App extends React.Component {
       super(props);
       this.state = {
           activeLink: "0",
-          page: "Map"
+          page: "Profile"
       }
       this.handleClick = this.handleClick.bind(this);
   }
@@ -22,10 +22,10 @@ class App extends React.Component {
   render() {
 
       let pages = {
-        Profile: <Profile onClick={this.handleClick}/>,
-        Map: <Map onClick={this.handleClick}/>,
-        Login: <Login onClick={this.handleClick}/>,
-        Signup: <Signup onClick={this.handleClick}/>
+        Profile: <Profile func={this.handleClick}/>,
+        Map: <Map func={this.handleClick}/>,
+        Login: <Login func={this.handleClick}/>,
+        Signup: <Signup func={this.handleClick}/>
       }
 
       return (

@@ -15,7 +15,7 @@ class Map extends React.Component {
         return (
             <>
                 <h1>Taxi-Loft</h1>
-                <NavTab activeLink="1" name="Выход" />
+                <NavTab activeLink="1" name="Выход"  nameLink="Login" func={this.props.func} />
                 <h1>Карта</h1>
             </>
         )
