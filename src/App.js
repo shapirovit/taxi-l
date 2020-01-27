@@ -3,6 +3,7 @@ import Login from './pages/Login.jsx';
 import Map from './pages/Map.jsx';
 import Profile from './pages/Profile.jsx';
 import Signup from './pages/Signup.jsx';
+import Header from './components/Header.jsx';
 
 
 class App extends React.Component {
@@ -11,7 +12,8 @@ class App extends React.Component {
       this.state = {
           activeLink: "0",
           page: "Profile",
-          login: false
+          login: false,
+          actLinkHeader: "profile"
       }
       this.handleClick = this.handleClick.bind(this);
   }
@@ -43,6 +45,8 @@ class App extends React.Component {
               <button onClick={this.handleClick} name="Map" >тест state Map</button>
               <button onClick={this.handleClick} name="Login" >тест state Login</button>
               <button onClick={this.handleClick} name="Signup" >тест state Signup</button>
+              
+              <Header activeLink={this.state.actLinkHeader} func={handleClick} />
           </>
       )
   }
