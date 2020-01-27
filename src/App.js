@@ -10,22 +10,30 @@ class App extends React.Component {
       super(props);
       this.state = {
           activeLink: "0",
-          page: "Profile"
+          page: "Profile",
+          login: false
       }
       this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(event) {
+      event.preventDefault();
       this.setState({ page: event.target.name }, console.log("this.state.activeLink=", this.state.activeLink))
   }
+
+  handleLogin(event) {
+    event.preventDefault();
+    this.setState({ login: true }, console.log("this.state.login=", this.state.login));
+    this.setState({ page: "Map" }, console.log("this.state.page in HandlerLogin=", this.state.page));
+}
 
   render() {
 
       let pages = {
         Profile: <Profile func={this.handleClick}/>,
         Map: <Map func={this.handleClick}/>,
-        Login: <Login func={this.handleClick}/>,
-        Signup: <Signup func={this.handleClick}/>
+        Login: <Login func={this.handleClick} loginFunc={this.handleLogin} />,
+        Signup: <Signup func={this.handleClick} loginFunc={this.handleLogin} />
       }
 
       return (
